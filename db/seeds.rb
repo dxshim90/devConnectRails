@@ -14,8 +14,8 @@ skills.each do |skill|
 end
 
 
-@profile = Profile.create(username: "Test", description: "TEST ETSTEST ET STES", role: "Tester")
+# @profile = Profile.create(username: "Test", description: "TEST ETSTEST ET STES", role: "Tester")
 
-Post.create(profile_id: Profile.last.id, title: "Test_post", body: "This is a test post")
-Comment.create(profile_id: Profile.last.id, post_id: Post.last.id, content: "This is a test comment")
+# Post.create(profile_id: Profile.last.id, title: "Test_post", body: "This is a test post")
+# Comment.create(profile_id: Profile.last.id, post_id: Post.last.id, content: "This is a test comment")
 

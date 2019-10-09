@@ -1,0 +1,10 @@
+
+    <%= simple_form_for @profile, html: {class: "form-group" } do |f| %>
+    <%= f.input :username, label: "Select A username" %>
+    <%= f.input :description, label: "Tell People about Yourself" %>
+    <%= f.input :role, label: "Whats your current Role?"%>
+    <%= f.collection_check_boxes :skill_ids, Skill.all, :id, :name, { include_hidden: false }%>
+    <br>
+    <%= f.button :submit, class: "btn btn-dark" %>
+    <% end %>
+

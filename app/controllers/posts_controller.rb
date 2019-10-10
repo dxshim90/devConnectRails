@@ -12,7 +12,11 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        @post.profile_id = current_user.profile.id
+            if current_user.profile.nil?
+                return redirect_to new_profile_path
+            else 
+                @post.profile_id = current_user.profile.id
+            end
         if @post.save 
             redirect_to @post
         else
@@ -32,13 +36,14 @@ class PostsController < ApplicationController
         if @post.update 
             redirect_to @post
         else 
+            flash[:error] = @profile.errors.full_messages.to_sentence
             render 'edit'
         end
     end
 
     def destroy 
         @post.destroy
-        redirect_to profile_path
+        redirect_to posts_path
     end
 
         

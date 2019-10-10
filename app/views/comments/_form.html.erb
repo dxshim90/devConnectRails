@@ -1,4 +1,4 @@
-<%= simple_form_for ([@post, @post.comments.build]) do |f| %>
+<%= simple_form_for ([@post, @post.comments.build]), html: {class: "form-group" } do |f| %>
     <%= f.input :content %>
     <%= f.button :submit, class: "btn btn-dark" %>
     <% end %>

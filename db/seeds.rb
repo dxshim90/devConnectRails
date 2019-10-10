@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-skills = ["Javascript", "Python", 'React']
+skills = ["Javascript", "Python", 'React', "Ruby", "Ruby Rails", "C#", "Css", "Vue", "HTML", "Redux", "PHP", "Flask", "Django", ".Net", "GraphQL", "NodeJS", "SQL", "MongoDB", "Angular"]
 
 skills.each do |skill|
     Skill.create(name: skill)

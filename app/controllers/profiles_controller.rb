@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
 
     def update 
         if @profile.update(profile_params)
-            redirect_to @profile
+            redirect_to profile_path(@profile)
         else
             render 'edit'
         end
@@ -35,7 +35,7 @@ class ProfilesController < ApplicationController
 
     def destroy
         @profile.destroy 
-        redirect_to root_path
+        redirect_to posts_path
     end
 
     private 

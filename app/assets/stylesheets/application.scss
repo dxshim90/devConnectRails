@@ -26,6 +26,15 @@
   max-width: 100%;
 }
 
+.post-img {
+  padding-right: 10px;
+}
+
+.post-con {
+  display: flex;
+  justify-content: space-between;
+}
+
 .message-show {
   box-sizing: border-box;
   border-radius: 5px;
@@ -66,4 +75,24 @@
 .comment-posted-by {
   color: black;
   font-size: 0.8em;
+}
+
+.profiles-con {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  margin: 10px;
+}
+
+.jumbotron-fluid {
+  text-shadow: #444 0 1px 1px;
+  color: black;
+  position: relative;
+  height: 40vh;
+
+  display: flex;
+  align-items: center;
 }

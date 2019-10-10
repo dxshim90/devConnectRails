@@ -12,7 +12,8 @@ class CommentsController < ApplicationController
         if @comment.save 
             redirect_to @post
         else
-            render 'new'
+            flash.now[:error] = "Something went Wrong"
+            render 'edit'    
         end
     end
 
@@ -20,7 +21,7 @@ class CommentsController < ApplicationController
     end
 
     def update 
-        if @comment.update 
+        if @comment.update(comment_params)
             redirect_to @post 
         else
             render 'edit'

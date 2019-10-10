@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<div class="d-flex row">
+	<div class="profiles-con">
         <% @profiles.each do |profile|%>
 		<div class="card" style="width: 20rem;">
    					<% if profile.image.attached?%>
@@ -16,6 +16,7 @@
         <%end%>
 	</div>
 	<br>
+	
 </div>
 
 

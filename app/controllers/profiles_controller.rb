@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+    before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
     before_action :find_profile, only: [:show, :edit, :update, :destroy]
 
     def index 

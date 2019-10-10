@@ -20,7 +20,11 @@
                         </div>
                     </div>
                     <div class="col-md-2">
+                    <% if user_signed_in? %>
+                        <%if current_user.profile.id == @profile.id %>
                         <%= link_to 'Edit Your Profile', edit_profile_path, class: "btn btn-dark" %>
+                        <%end%>
+                    <%end%>
                     </div>
                 </div>
                 <div class="row">

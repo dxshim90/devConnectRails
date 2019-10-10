@@ -25,3 +25,45 @@
   max-height: 100%;
   max-width: 100%;
 }
+
+.message-show {
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 2em 1.5em;
+  color: black;
+  font-family: "Asap", sans-serif;
+  font-weight: 300;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .message-desc {
+    font-size: 1.1em;
+    line-height: 1.75;
+    margin-bottom: 50px;
+  }
+
+  .message-posted-by {
+    color: black;
+    font-size: 0.9em;
+  }
+
+  .reply-to-msg {
+    margin-top: 50px;
+  }
+}
+
+.comment {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.comment-content {
+  font-size: 1.25em;
+}
+
+.comment-posted-by {
+  color: black;
+  font-size: 0.8em;
+}

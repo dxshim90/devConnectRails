@@ -1,20 +1,35 @@
 class CommentsController < ApplicationController
-    before_action :find_post, only: [:edit, :update, :destroy]
+    before_action :authenticate_user!
+    before_action :find_post, only: [:create, :edit, :update, :destroy]
+    before_action :find_comment, only: [:edit, :update, :destroy]
 
     def new 
     end 
 
     def create 
-
+        @comment = @post.comments.create(comment_params)
+        @comment.profile_id = current_user.profile.id
+        if @comment.save 
+            redirect_to @post
+        else
+            render 'new'
+        end
     end
 
     def edit 
     end
 
     def update 
+        if @comment.update 
+            redirect_to @post 
+        else
+            render 'edit'
+        end
     end
 
     def destroy 
+        @comment.destroy 
+        redirect_to @post
     end
 
     private 

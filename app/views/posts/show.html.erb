@@ -1,19 +1,27 @@
 <div class="col-md-10 col-md-offset-1">
     <div class="message-show">
         <h2><%= @post.title %> </h2>
-        <p class="message-posted-by"><%= time_ago_in_words(@post.created_at)%></p>
+        <p class="message-posted-by"><%= time_ago_in_words(@post.created_at)%> By <%= @post.profile.username %></p>
         <p class="message-desc"><%= @post.body %></p>
 
         <div class="links btn-group">
-            <%= link_to 'Back', root_path, class: "btn btn-default" %>
+            <%= link_to 'Back', posts_path, class: "btn btn-dark" %>
            
-              
+              <% if user_signed_in? %>
+               <% if current_user.id == @post.profile.user.id%>
                 <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %>
                 <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: "Are You Sure?"}, class: "btn btn-danger" %>
-              
-          
+               <%end%> 
+              <%end%>  
         </div>
 
+        <h3 class="comment=selection-header">Comments:</h3>
+        <p><%= render @post.comments%> </p>
+
+    <% if user_signed_in? %>
+        <h3 class=reply-to-msg>Join Convo</h3>
+        <%= render 'comments/form'%>
+    <% end%>
  
         
     </div>

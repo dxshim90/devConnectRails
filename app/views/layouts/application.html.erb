@@ -43,6 +43,15 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                <% if user_signed_in? %>
+                <% if !current_user.profile%>
+                 <li class="nav-item">
+                    <%= link_to 'Create Your Profile', new_profile_path, class: "nav-link" %>
+                </li>
+                <%else%>
+                 <li class="nav-item">
+                    <%= link_to 'Edit Your Profile', edit_profile_path(current_user.profile), class: "nav-link" %>
+                </li>
+                <%end%>
                 <li class="nav-item">
                     <%= link_to 'Account Settings', edit_user_registration_path, class: "nav-link" %>
                 </li>

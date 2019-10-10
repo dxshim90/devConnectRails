@@ -10,8 +10,8 @@
     <div class="row">
       <div class="span2">
         <a href="#" class="thumbnail">
-           <% if post.profile.image.attached?%>
-					    <%= image_tag profile.image, class: "card-img-top" %>
+           	<% if post.profile.image.attached?%>
+					    <%= image_tag post.profile.image, class: "card-img-top" %>
 					<% else %>
 						 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
 					<% end%>

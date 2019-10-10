@@ -40,7 +40,7 @@ class ProfilesController < ApplicationController
     private 
 
     def profile_params
-        params.require(:profile).permit(:username, :description, :role, :skill_ids =>[])
+        params.require(:profile).permit(:username, :description, :role, :image, :skill_ids =>[])
     end
 
     def find_profile 

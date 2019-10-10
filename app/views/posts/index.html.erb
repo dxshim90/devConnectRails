@@ -1,0 +1,39 @@
+<% @posts.each do |post|%>
+<div class="row">
+  <div class="span8">
+    <div class="row">
+      <div class="span8">
+        <h4><strong><%= post.title %> </strong></h4>
+        <i class="icon-user"></i> By: <%= post.profile.username %> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="span2">
+        <a href="#" class="thumbnail">
+           <% if post.profile.image.attached?%>
+					    <%= image_tag profile.image, class: "card-img-top" %>
+					<% else %>
+						 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+					<% end%>
+        </a>
+      </div>
+      <div class="span6">      
+        <p>
+        <%= post.body %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span8">
+        <p></p>
+        <p>
+          | <i class="icon-calendar"></i> <%= time_ago_in_words(post.created_at)%>
+          | <i class="icon-comment"></i><%= post.comments.count %> Comments
+          | <%= link_to 'Read More', post_path(post), class: "btn btn-dark" %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<%end%>
+<hr>

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+	<div class="d-flex row">
+        <% @profiles.each do |profile|%>
+		<div class="card" style="width: 20rem;">
+   					<% if profile.image.attached?%>
+					    <%= image_tag profile.image, class: "card-img-top" %>
+					<% else %>
+						 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+					<% end%>
+  <div class="card-block">
+    <h4 class="card-title"><%= profile.username %> </h4>
+    <p class="card-text"><%= profile.role %></p>
+    <%= link_to 'View Profile', profile_path(profile), class: "btn btn-dark" %>
+  </div>
+</div>
+        <%end%>
+	</div>
+	<br>
+</div>
+
+
+		

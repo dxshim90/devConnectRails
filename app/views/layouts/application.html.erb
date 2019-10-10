@@ -14,21 +14,24 @@
       <div class="container">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Left</a>
+             <% if user_signed_in? %>
+                <li class="nav-item">
+                    <%= link_to 'DevChat', posts_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="//codeply.com">Codeply</a>
+                    <%= link_to 'Ask A Question?', new_post_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <%= link_to 'Find A Dev', profiles_path, class: "nav-link" %>
+                </li>
+             <%else%>
+              <li class="nav-item">
+                    <%= link_to 'DevChat', posts_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <%= link_to 'Find A Dev', profiles_path, class: "nav-link" %>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
+             <%end%>
             </ul>
         </div>
         <div class="mx-auto order-0">
@@ -39,12 +42,22 @@
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
+               <% if user_signed_in? %>
+                <li class="nav-item">
+                    <%= link_to 'Account Settings', edit_user_registration_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </li>
+
+               <% else %>
                 <li class="nav-item">
                     <%= link_to 'Log In', new_user_session_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
                     <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
                 </li>
+               <%end %>
             </ul>
         </div>
       </div>

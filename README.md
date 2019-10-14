@@ -1,25 +1,7 @@
-# README
+Devconnect!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Thanks for checking out my repo!
 
-Things you may want to cover:
+Welcome to DevConnect a social media platform built by devs for Devs.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# devConnectRails
+[We Are Live On Heroku!](https://frozen-forest-59182.herokuapp.com/)

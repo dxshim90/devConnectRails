@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:alpine3.15
+    environment:
+      POSTGRES_PASSWORD: example
+  web:
+    build: .
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWD: example
+      POSTGRES_HOST: db
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
